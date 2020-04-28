@@ -21,12 +21,13 @@ const colorSwitch = {
     }
     refs.start.classList.add('active');
     this.intervalId = setInterval(this.change, 1000);
-    console.log(this.intervalId);
+    refs.start.setAttribute('disabled', 'true');
   },
   onStop() {
     refs.start.classList.remove('active');
     clearInterval(this.intervalId);
     this.intervalId = null;
+    refs.start.removeAttribute('disabled');
   },
 
   change() {
